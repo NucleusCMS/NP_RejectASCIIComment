@@ -103,7 +103,7 @@ class NP_RejectASCIIComment extends NucleusPlugin
 	{
 		global $admin;
 		$langFile = $this->getDirectory() . 'japanese.php';
-		if (file_exists($langFile)) {
+		if (is_file($langFile)) {
 			include_once($langFile);
 		}
 	}
@@ -223,4 +223,3 @@ class NP_RejectASCIIComment extends NucleusPlugin
 	}
 
 }
-

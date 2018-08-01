@@ -141,7 +141,7 @@ class NP_RejectASCIIComment extends NucleusPlugin
 		$iname     = quickQuery($inque);
 		$checkData = str_replace($bname, '', $checkData);
 		$checkData = str_replace($iname, '', $checkData);
-		$checkData = ereg_replace("\r|\n","",$checkData);
+		$checkData = str_replace(array("\r","\n"),'',$checkData);
 		$checkData = mb_convert_encoding($checkData, 'UTF-8', $encoding);
 		if ($checkData && !preg_match('/[\x80-\xff]/', $checkData)) {
 			$checkType = array(
